@@ -20,18 +20,10 @@
           <div class="col-lg-8 px-0 my-2 pr-lg-5 page-content">
 
 
-            <div class="row mx-0 has-shifting-underline">
+            <div class="row mx-0 has-content-title">
               
               <div class="col-12 py-1 px-0">
-                <h5 class="pb-2 position-relative page-title text-uppercase text-primary hover-text-primary"> 
-                  <span class="d-inline-block py-2 position-relative text-bold text-primary">
-                    <span class="px-2222">{{ label('lbl_our_services') }}</span>
-                  </span>
-                  <div class="d-flex w-100 position-absolute bottom-left">
-                  <div class="shifting-underline-1 padding-1 bg-secondary"></div>
-                  <div class="shifting-underline-2 padding-1 bg-primary"></div>
-                  </div>
-                </h5>  
+                <h5 class="text-left content-title py-4 mb-4 font-20">{{ label('lbl_our_services') }}</h5>
               </div>
               
               @if (count($services ))

@@ -21,46 +21,18 @@
   
       <div class="row">
           <div class="col-lg-8 px-0 my-2 pr-lg-5 page-content">
-
-              <div class="row mx-0 has-shifting-underline">
+              <div class="row mx-0 has-content-title">
 
                 <div class="col-12 py-1 px-0 ">
-                  <h5 class="pb-2 position-relative page-title text-uppercase text-primary hover-text-primary"> 
-                    <span class="d-inline-block py-2 position-relative text-bold text-primary">
-                      <span class="px-2222"> {!! $category->title !!}</span>
-                    </span>
-                    <div class="d-flex w-100 position-absolute bottom-left">
-                    <div class="shifting-underline-1 padding-1 bg-secondary"></div>
-                    <div class="shifting-underline-2 padding-1 bg-primary"></div>
-                    </div>
-                  </h5>   
+                  <h5 class="text-left content-title py-4 mb-4 font-20"> {!! $category->title !!}</h5>
                 </div>
-      
                       
                 @if (count($publications))
-
                   <div class="col-12 px-0 mt-2">
                     <div class="row">
                       @foreach ($publications as $key => $document)
-          
-                          {{-- <div class="col-lg-6 col-sm-6 col-12 mb-4">
-                            <div class=" h-100  box-shadow-slight rounded-slight  overflow-hidden  bg-white ">
-                              <a href="{!! asset('uploads/documents/'.$publication->file)!!}" target="_blank" class="has-hover-bounce p-2">
-                                <div class="card-body image d-flex align-items-center">
-                                  <h6 class="text-md border-left">
-                                    <i class="fa fa-download hover-bounce"></i>
-                                  </h6>
-                                  <div class="ml-3">
-                                    <h6 class="card-text text-muted">{!! date('d M, Y', strtotime($publication->published_date)) !!}</h6>
-                                    <h6 class="card-text bold-600">{!! $publication->title !!}</h6>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div> --}}
-
                           <a target="_blank" href="{!! asset('uploads/documents/'.$document->file)!!}" class="col-12 d-flex p-0
-                             h-100 mx-0 border-faded box-shadow-slight mb-2 cursor-pointer hover-bg has-hover-bounce has-hover-text-primary 
+                             h-100 mx-0 border-faded box-shadow-slightt mb-2 cursor-pointer hover-bg has-hover-bounce has-hover-text-primary 
                              align-items-center has-hover-text-secondary rounded-slight">
                             <div class="padding-2 h-100 text-center borderrrr border-color-primary border-width-2">
                               <div class=" bg-primaryyy text-white h-100  d-flex justify-content-center position-relative align-items-center " >
@@ -89,7 +61,6 @@
                     {{label('lbl_no_information')}}
                   </div>
                 @endif
-                  
               </div>
 
           </div>

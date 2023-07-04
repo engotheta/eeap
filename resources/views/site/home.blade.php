@@ -141,7 +141,7 @@
         data-offset="250px" data-rate="0.2">
         <div class="container has-content-title text-center">
           <h5 class="text-black content-title py-4 max-width-680 mb-4">{{  $home_content->title }} </h5>
-          <div class="text-dark mx-auto mb-4 " style="max-width: 960px; "> {!! str_limit(strip_tags($news->content) ,600) !!}</div>
+          <div class="text-dark mx-auto mb-4 " style="max-width: 960px; "> {!! str_limit(strip_tags($home_content->content) ,600) !!}</div>
           <a class="d-inline-block p-2 px-4 readmore bg-primary fade-on-hover cursor-pointer text-white position-relative" href=""> 
             {{label('lbl_readmore')}}  <i class="pl-1 icon fa fa-chevron-right"></i>
           </a>
@@ -149,59 +149,47 @@
       </div>
     @endforeach
 
-
-    <div class="bg-white bg-secondary-fadeddd  position-relative py-4 pb-lg-5 ">
-      <div class="h-100 bg-gradient-transparent-white top-left w-100 position-absolute" style="opacity:0.5"></div>
-      <div class="container pb-5 py-3">
-        <div class="mb-3 text-center pt-3 max-width-680">
-          <h5 class="text-bold text-primary mb-3">{{label('lbl_stakeholders')}} </h5>
-        </div>
-
-        <div class="row">
-          @foreach($stakeholderCategories as $key => $category) 
-            @break($key > 2)
-            <div class="col-md-4 px-lg-0 d-flex flex-column">
-              <div class="mb-3 text-center pt-3 max-width-680">
-                <h5 class="text-bold text-primary mb-3">{{$category->title}} </h5>
-              </div>
-              <div class="col px-0 d-flex flex-column">
-                @foreach($category->stakeholders as $key => $stakeholder ) 
-                  <div class="col mt-1 text-center has-hover-bounce has-shifting-underline  text-center position-relative" >
-                    <a href="{{isset($stakeholder->url)? $stakeholder->url : url('/stakeholders/'.$category->slug.'/'.$stakeholder->slug)}}" @if(isset($stakeholder->url)) target="_blank" @endif 
-                      class="h-100  cursor-pointer zoom-container show-more-content-news p-0 d-flex border-bottom box-shadow  
-                      bg-white last-no-border align-items-center border-faded "  style="min-height:80px"> 
-                      <div style="max-width:90px" class="col-3 col-md-4 p-2 h-100 bg-secondaryyy tex-left  d-flex flex-column justify-content-center pr-0 border-rightt " >
-                        <div class="border-faded p-1">
-                          <div class="overflow-hidden box-shadow-slight">
-                            <div class=" mx-auto square-container bg-white image my-0 hover-text-primary background-image" 
-                              style="background-image:url('{{asset('uploads/stakeholders/'.$stakeholder->photo_url)}}'); max-width:80px " >  
-                              <div class="dark-overlay"></div>
-                            </div>
-                          </div>
+    @if(count($partners))
+      <div class="bg-white pt-4  px-lg-5 py-5 parallax-banner position-relative" 
+        style="background:urllll({{asset('site/images/bg/bg6.jpg')}}); background-size:cover; background-repeat: no-repeat;" 
+        data-offset="250px" data-rate="0.2">
+        <div class="container has-content-title pb-5 ">
+          <div class="px-lg-5">
+            <h5 class="text-black content-title py-4 max-width-680 mb-5">{{ label('lbl_partners')}} </h5>
+            
+            <div class="owl-carousel-partners px-lg-5 mt-2 owl-theme bg-none owl-loaded position-relative">
+              <div class="owl-stage-outer overflow-hidden" >
+                <div class="owl-stage " style="display:flex">
+                  @foreach($partners as $key => $partner)
+                    <div class="owl-item text-center p-2  last-no-border-element text-center position-relative" >
+                      <a target="_blank" rel="noopener noreferrer"  href="{{$partner->url}}" 
+                        class="d-block max-width-260 flex-center flex-column p-2 bg-gradient-primary-secondary-transparenttt">
+                        <div class="bg-white p-2 overflow-hidden zoom-container"> 
+                          <img class="pr-1 py-2 max-width-120 image" style="" src="{{asset('uploads/partners/'.$partner->photo_url)}}">
                         </div>
-                      </div>
-                      <div class="col  bg-secondary-faded h-100 pl-3 text-left hover-text-primary d-flex align-items-center "> 
-                        {{$stakeholder->title}} 
-                      </div>
-                    </a>
-                  </div>
-                @endforeach
-                <div class="col d-flex align-items-end text-center justify-content-center position-relative" style="height:60px" >
-                  <a href="{{ url('/stakeholders/'.$category->slug)}}"  class="readmore bg-primary mt-4 border d-inline-block px-3 py-2 
-                    rounded-medium  box-shadow-slight text-white hover-bg-secondary cursor-pointer  ">
-                    <span>{{label('lbl_view_more')}} </span>
-                    <i class="fa fa-chevron-right"></i>
-                  </a> 
+                        {{-- <div class="mt-3 text-bold faded text-dark" > {{ $partner->title}} </div> --}}
+                      </a>
+                    </div>
+                  @endforeach
                 </div>
-
+                <div class="owl-controls  pt-2"></div>
+                <!-- get button here -->
+                <div class="d-none " >
+                  <span class="hover-icon-left owl-prev-template-partners"> 
+                    <div class="icon box-30 flex-center text-white round bg-primary"><i class="fa fa-chevron-left "></i> </div>
+                  </span>
+                  <span class="hover-icon-right owl-next-template-partners"> 
+                    <div class="icon box-30 flex-center text-white round bg-primary"><i class="fa fa-chevron-right "></i></div>
+                  </span>
+                </div> 
               </div>
+              <div class="custom-owl-nav-partners custom-owl-nav  overflow-visible position-absolute w-100"></div>
             </div>
-          @endforeach
 
+          </div>
         </div>
       </div>
-    </div>
-    
+    @endif
  
 
   </div>

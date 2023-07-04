@@ -57,6 +57,7 @@ class HomeController extends BaseSiteController
         $now_str = \Carbon\Carbon::now()->format('d-m-Y'); 
 
         // $events = Events::whereDate('event_date', '>=', now())->orderBy('event_date', 'DESC')->take(3)->get();
+        
         $events = Events::orderBy('event_date', 'DESC')->take(2)->get();
 
         $news_list = News::where('active',1)->orderBy('created_at', 'DESC')->take(4)->get();
@@ -129,8 +130,8 @@ class HomeController extends BaseSiteController
 
         
         $more_infos = MoreInfo::all();
-        $site_latest_news = $more_infos->firstWhere('item_name','latest-news');
-        $site_partners = $more_infos->firstWhere('item_name','site-partners');
+        // $site_latest_news = $more_infos->firstWhere('item_name','latest-news');
+        // $site_partners = $more_infos->firstWhere('item_name','site-partners');
         
         $home_contents = MoreInfo::where('item_name','home-content')->get();
      
@@ -186,8 +187,6 @@ class HomeController extends BaseSiteController
             'licensed_entity_categories',
             'regional_office',
             'leaders',
-            'site_latest_news',
-            'site_partners',
             'home_contents',
             'events'
             // 'online_services'

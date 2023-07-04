@@ -2,6 +2,8 @@
 <html lang="{{ str_replace('_', '', curlang()) }}">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+  <meta http-equiv="X-Frame-Options" content="deny">
   <meta http-equiv="Content-Language" content="{{ str_replace('_', '', curlang()) }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   @if (! empty($seo))
@@ -86,7 +88,7 @@
     <!-- /HEADER -->
 
     <!-- contents -->
-    <div class="site-content position-relative">
+    <div class="site-content position-relative bg-white">
       @yield('content')
     </div>
     <!-- /contents -->
@@ -95,9 +97,9 @@
      {{-- @include('site.includes/chatbot') --}}
      <!-- /CHAtBOt -->
 
-        <!-- SOCIALS -->
-        @include('site.includes/social_media')
-        <!-- /SOCIALS -->
+    <!-- SOCIALS -->
+    @include('site.includes/social_media')
+    <!-- /SOCIALS -->
    
     <!-- FOOTER -->
     @include('site.includes/footer')

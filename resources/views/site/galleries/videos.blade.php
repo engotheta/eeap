@@ -18,18 +18,10 @@
 	<div class="col-12">
 	
 		<div class="row">
-			<div class="col-lg-12 px-0 my-2 page-content has-shifting-underline">
+			<div class="col-lg-12 px-0 my-2 page-content has-content-title">
 
                 <div class="col-12 py-1 px-0">
-                    <h5 class="pb-2 position-relative page-title text-uppercase text-primary hover-text-primary"> 
-                        <span class="d-inline-block py-2 position-relative text-bold text-primary">
-                          <span class="px-2222">{!! label('lbl_videos_gallery') !!}</span>
-                        </span>
-                        <div class="d-flex w-100 position-absolute bottom-left">
-                        <div class="shifting-underline-1 padding-1 bg-secondary"></div>
-                        <div class="shifting-underline-2 padding-1 bg-primary"></div>
-                        </div>
-                    </h5>
+                    <h5 class="text-left content-title py-4 mb-4 font-20">{!! label('lbl_videos_gallery') !!}</h5>
                 </div>
   
   
@@ -39,15 +31,14 @@
     
                         @foreach($albums as $keys => $album)
                             <div class="col-12 px-0 mt-3">
-                                <a class="d-block" href="{{url('videos/'.$album->slug)}}">
-                                    <h5 class=" text-bold section-head py-2"> 
+                                <a class="d-block text-bold text-dark fade-on-hover" href="{{url('videos/'.$album->slug)}}">
+                                    <h5 class="  py-2"> 
                                         <i class="fa fa-folder pr-2"> </i>
                                         <span>  {{ $album->title}} </span>   
                                         <span> ({{ count($album['videos']) }})  </span>                                        
                                     </h5>
                                 <a> 
                             
-                                
                                 <div class="row gray-border mb-3 mt-2">                              
                                     @forelse($album['videos']->slice(0,4) as $key => $video)
                                         <div class="col-md-3 media-thumbnail p-2 ">

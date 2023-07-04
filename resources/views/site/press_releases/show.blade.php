@@ -31,7 +31,8 @@
                             <span class="text-muted bold-600 d-inline-block mr-4">
                                 <i class="fa fa-calendar-alt mr-1"></i> {!! date('d M, Y', strtotime($press_release->created_at)) !!}
                             </span>
-                            <a href="{!! asset($press_release->file) !!}" target="_blank" rel="noopener noreferrer" class="d-inline-block btn btn-outline-primary rounded">
+                            <a href="{!! asset($press_release->file) !!}" target="_blank" rel="noopener noreferrer" 
+                                class="d-inline-block btn btn-outline-primary rounded">
                                 <i class="fa fa-file-download mr-1"></i> {{ label('lbl_download') }}
                             </a>
                         </div>

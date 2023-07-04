@@ -23,19 +23,19 @@
 
       <div class="col-12 form-group">
         {!! Form::label('summary_sw', 'Summary of the Category in Swahili') !!}
-				{!! Form::textarea('summary_sw',null,['class'=>'form-control', 'row'=>'2']) !!}
+				{!! Form::textarea('summary_sw',null,['id' => 'redactor_sw','class'=>'form-control', 'row'=>'2']) !!}
       </div>
 
       <div class="col-12 form-group">
         {!! Form::label('summary_en', 'Summary of the Category in English') !!}
-				{!! Form::textarea('summary_en',null,['class'=>'form-control', 'row'=>'2']) !!}
+				{!! Form::textarea('summary_en',null,['id' => 'redactor_en', 'class'=>'form-control', 'row'=>'2']) !!}
       </div>
 
       <?php $default = isset($category)? $category->featured: null ?>
-      <div class="col-12 form-group">
-        {!! Form::label('featured', 'Show on Homepage as TIRA Leadership') !!}
+      {{-- <div class="col-12 form-group">
+        {!! Form::label('featured', 'Show on Homepage') !!}
         {!! Form::select('featured', array(0 =>'NO',1 => 'YES'), $default, array('class' => 'form-control')) !!}
-      </div>
+      </div> --}}
 
       <div class="col-12 form-group">
         {!! Form::submit($submitButton, ['class' => 'btn btn-primary col-md-12']) !!}

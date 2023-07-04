@@ -63,9 +63,9 @@
             <li class="@php activeLink(['press_releases']) @endphp"><a href="{{route('cms.press_releases.index')}}">Press Releases</a></li>
           @endif
 
-          @if(permission('*.speeches.*'))
+          {{-- @if(permission('*.speeches.*'))
             <li class="@php activeLink(['speeches']) @endphp"><a href="{{route('cms.speeches.index')}}">Speeches</a></li>
-          @endif
+          @endif --}}
 
           @if(permission('*.galleries.*'))
            <li class="@php activeLink(['galleries', 'media']) @endphp"><a href="{{ url('cms/galleries') }}"> Galleries</a></li>
@@ -109,7 +109,7 @@
          <ul class="ega-submenu">
           
           @if(permission('*.services.*'))
-              <li class="@php activeLink(['services']) @endphp"><a href="{{route('cms.services.index')}}"> Services</a></li>
+              <li class="@php activeLink(['services']) @endphp"><a href="{{route('cms.services.index')}}"> Actions</a></li>
           @endif
       
           {{-- @if(permission('*.licensed-entities.*','*.licensed-entity-categories.*'))
@@ -120,25 +120,25 @@
             </li>
           @endif --}}
 
-          @if(permission('*.stakeholders.*','*.stakeholder-categories.*'))
+          {{-- @if(permission('*.stakeholders.*','*.stakeholder-categories.*'))
             <li data-username="stakeholders" class="nav-item @php activeLink(['stakeholder-categories','stakeholders']) @endphp">
                 <a href="{{ url('/cms/stakeholder-categories') }}" class="nav-link">
                   <span class="ega-mtext">Stakeholders</span>
                 </a>
             </li>
-          @endif
+          @endif --}}
 
-          @if(permission('*.agriculture-maps.*'))
+          {{-- @if(permission('*.agriculture-maps.*'))
           <li data-username="stakeholders" class="nav-item @php activeLink(['agriculture-maps']) @endphp">
               <a href="{{ url('/cms/agriculture-maps') }}" class="nav-link">
                 <span class="ega-mtext">Agriculture Maps</span>
               </a>
           </li>
-           @endif
+           @endif --}}
 
-          {{-- @if(permission('*.partners.*'))
-            <li class="@php activeLink(['partners']) @endphp"><a href="{{route('cms.partners.index')}}"> Stakeholders</a></li>
-          @endif --}}
+          @if(permission('*.partners.*'))
+            <li class="@php activeLink(['partners']) @endphp"><a href="{{route('cms.partners.index')}}"> Partners </a></li>
+          @endif
 
           @if(permission('*.more-infos.*'))
             <li class="@php activeLink(['more-infos']) @endphp"><a href="{{ url('cms/more-infos') }}"> Homepage Informations</a></li>
@@ -196,7 +196,7 @@
      <li data-username="organogram administration management members" class="nav-item ega-hasmenu @php activeLink(['organogram','administration','administration_categories','administration_categories_members']) @endphp">
          <a href="javascript:" class="nav-link ">
            <span class="ega-micon"><i class="feather icon-users"></i></span>
-           <span class="ega-mtext"> Administration</span>
+           <span class="ega-mtext"> Members </span>
          </a>
          <ul class="ega-submenu">
  
@@ -205,11 +205,11 @@
            @endif --}}
            
            @if(permission('*.administration.*'))
-           <li class="@php activeLink(['administration']) @endphp"><a href="{{ url('cms/administration') }}">Administration Members</a></li>
+           <li class="@php activeLink(['administration']) @endphp"><a href="{{ url('cms/administration') }}">Members Info</a></li>
            @endif
  
            @if(permission('*.administration_categories.*'))
-           <li class="@php activeLink(['administration_categories']) @endphp"><a href="{{ url('cms/administration_categories') }}"> Administration Categories</a></li>
+           <li class="@php activeLink(['administration_categories']) @endphp"><a href="{{ url('cms/administration_categories') }}"> Members Categories</a></li>
            @endif
  
          </ul>
@@ -236,7 +236,7 @@
           @endif
 
           {{-- @if(permission('*.about_links.*'))
-            <li class="@php activeLink(['about_links']) @endphp"><a href="{{ url('cms/about_links') }}">About TIRA Links</a>  </li>
+            <li class="@php activeLink(['about_links']) @endphp"><a href="{{ url('cms/about_links') }}">About Links</a>  </li>
           @endif
 
           @if(permission('*.support_links.*'))
@@ -247,17 +247,17 @@
             <li class="@php activeLink(['related_links']) @endphp"><a href="{{url('/cms/related_links')}}"> Public Relations Links</a></li>
           @endif --}}
         
-          @if(permission('*.media_links.*'))
+          {{-- @if(permission('*.media_links.*'))
             <li class="@php activeLink(['media_links']) @endphp"><a href="{{url('/cms/media_links')}}"> Media Links</a></li>
-          @endif
+          @endif --}}
 
-          @if(permission('*.quick_links.*'))
+          {{-- @if(permission('*.quick_links.*'))
             <li class="@php activeLink(['quick_links']) @endphp"><a href="{{ url('cms/quick_links') }}">Quick Links</a> </li>
           @endif 
 
           @if(permission('*.important_links.*'))
             <li class="@php activeLink(['important_links']) @endphp"><a href="{{ url('cms/important_links') }}">Important Links</a>  </li>
-          @endif
+          @endif --}}
 
           @if(permission('*.social_links.*'))
             <li class="@php activeLink(['social_links']) @endphp"><a href="{{ url('cms/social_links') }}">Social Links</a>  </li>
@@ -279,13 +279,13 @@
             <li class="@php activeLink(['howdois']) @endphp"><a href="{{ url('cms/howdois') }}">How Do I?</a>  </li>
           @endif  --}}
 
-          @if(permission('*.complaints.*'))
+          {{-- @if(permission('*.complaints.*'))
           <li data-username="feedback complaints" class="nav-item @php activeLink(['feedback','feedbacks','complaints']) @endphp">
             <a href="{{ url('cms/feedbacks') }}" class="nav-link">
               <span class="ega-mtext">Feedback</span>
             </a>
           </li>
-          @endif
+          @endif --}}
           
           @if(permission('*.faqs.*'))
             <li class="@php activeLink(['faqs']) @endphp"><a href="{{url('/cms/faqs')}}"> FAQs</a></li>
@@ -317,21 +317,21 @@
           <span class="ega-micon"><i class="feather icon-settings"></i></span><span class="ega-mtext">Site Settings</span></a>
         <ul class="ega-submenu">
 
-          @if(permission('*.regional_office.*'))
+          {{-- @if(permission('*.regional_office.*'))
             <li class="@php activeLink(['regional_office']) @endphp"><a href="{{ url('cms/regional_office')}}">Contacts Us Details</a></li>
-          @endif
+          @endif --}}
 
-          @if(permission('*.googlemaps.*'))
+          {{-- @if(permission('*.googlemaps.*'))
             <li class="@php activeLink(['googlemaps']) @endphp"><a href="{{ url('cms/googlemaps')}}">Google Map</a> </li>
-          @endif
+          @endif --}}
 
           @if(permission('*.seo.*'))
             <li class="@php activeLink(['seo']) @endphp"><a href="{{ url('cms/seo')}}">SEO</a></li>
           @endif
 
-          @if(permission('*.preferences.*'))
+          {{-- @if(permission('*.preferences.*'))
             <li class="@php activeLink(['preferences']) @endphp"><a href="{{ url('cms/preferences')}}">Preferences</a></li>
-          @endif
+          @endif --}}
 
         </ul>
     </li>

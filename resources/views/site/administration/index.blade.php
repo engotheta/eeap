@@ -20,20 +20,13 @@
     <div class="row mx-0">
       <div class="col-lg-12 px-0 my-2 page-content">
 
-        <div class="row mx-0 has-shifting-underline">
+        <div class="row mx-0 has-content-title">
           <div class="col-12 px-0 py-1 ">
-            <h5 class="pb-2 position-relative page-title text-uppercase text-primary hover-text-primary"> 
-              <span class="d-inline-block py-2 position-relative text-bold text-primary">
-                  <span class="px-2222">{!! $category->title !!}</span>
-              </span>
-              <div class="d-flex w-100 position-absolute bottom-left">
-              <div class="shifting-underline-1 padding-1 bg-secondary"></div>
-              <div class="shifting-underline-2 padding-1 bg-primary"></div>
-              </div>
-            </h5>  
+            <h5 class="text-left content-title py-4 mb-4 font-20">{!! $category->title !!}</h5>
+           
           </div>
           <div class="col-12 px-0">
-            <div class="pb-3 rich-text">
+            <div class="pb-3 rich-text w-100">
               {!! nl2br($category->summary) !!}
             </div>
             <div class="col-12 px-0">

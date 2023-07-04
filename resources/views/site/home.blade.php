@@ -51,7 +51,7 @@
                     <div class=" d-none p-5  m-5 d-sm-inline-block position-absolute w-50" 
                       style="top:50%; transform:translateY(-50%); z-index:9999;" >
                       <div class="pr-3 text-white text-bold  position-relative" style="top:-60px; font-size: 50px">
-                        {{ str_limit(strip_tags($photo->content),140) }} 
+                        {{ str_limit(strip_tags($photo->content),80) }} 
                       </div>
                       <a class="p-2 px-4 readmore bg-primary fade-on-hover cursor-pointer text-white position-relative" href=""> 
                         {{label('lbl_readmore')}}  <i class="pl-1 icon fa fa-chevron-right"></i>
